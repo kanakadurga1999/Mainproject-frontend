@@ -1,10 +1,11 @@
 // Dashboard.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import BatchList from '../ui-components/BatchList';
 import StudentList from '../ui-components/StudentList';
 import ResultUploadForm from '../ui-components/ResultUploadForm';
 import EmailForm from '../ui-components/EmailForm';
 import '../ui-components/Login.css';
+import axios from 'axios';
 
 const Dashboard = () => {
   const [selectedBatch, setSelectedBatch] = useState(null);
@@ -36,6 +37,10 @@ const Dashboard = () => {
     // Handle email sending logic here
     setRecipientEmail(email);
   };
+
+//   useEffect(()=>{
+//     axios.get('http://localhost:3500/')
+//   },[])
 
   return (
     <>
